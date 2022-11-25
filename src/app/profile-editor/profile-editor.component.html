@@ -1,0 +1,25 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+    <label for="first-name">First Name: </label>
+    <input id="first-name" type="text" formControlName="firstName">
+
+    <label for="last-name">Last Name: </label>
+    <input id="last-name" type="text" formControlName="lastName">
+    <div>
+        <h2>Single Address</h2>
+        <app-address-cva formControlName="address"></app-address-cva>
+
+    </div>
+
+    <app-address-list-cva formControlName="addresses"></app-address-list-cva>
+    <!-- <app-address-input [addressForm]="address"></app-address-input> -->
+    <app-aliases-cva formControlName="aliases"></app-aliases-cva>
+    <!-- <app-aliases-input [aliasesForm]="aliases"></app-aliases-input> -->
+
+
+    <p>Complete the form to enable button.</p>
+
+    <pre>{{profileForm.value|json}}</pre>
+
+    <button type="submit">Submit</button>
+</form>
